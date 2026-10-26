@@ -1,0 +1,7 @@
+{
+  "name": "Punch Love Coffee - Birmingham Roasters & Espresso",
+  "description": "Punch Love Coffee in MAKEbhm, Birmingham, AL. Specialty organic roasts, online coffee bean shop, weekly barista workshops, brew guides, and local cafe.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
