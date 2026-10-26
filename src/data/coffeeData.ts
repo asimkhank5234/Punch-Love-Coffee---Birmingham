@@ -2,7 +2,7 @@ import { CoffeeProduct, Workshop, BlogPost, Testimonial, CafeMenuItem } from '..
 
 export const CAFE_INFO = {
   name: 'Punch Love Coffee',
-  tagline: 'Organic, ethically sourced specialty roasters in Birmingham, AL',
+  tagline: 'Great Coffee, Good Trash Talk',
   address: '4000 3rd Ave S #103, Birmingham, AL 35222',
   locationName: 'Inside MAKEbhm Makerspace',
   googleRating: 4.6,
@@ -430,11 +430,11 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 'test-2',
     author: 'Marcus Thornton',
     location: 'Homewood, AL',
-    source: 'Workshop Attendee',
+    source: 'Google',
     rating: 5,
     date: '1 month ago',
-    highlight: 'The Barista Workshop changed my morning routine forever!',
-    text: 'Attended the Saturday Espresso Fundamentals class with Julian. He explained extraction ratios so clearly, and getting to pull shots on commercial machines until we dialed in the sweet spot was worth triple the price. Plus you get a fresh bag of beans to take home!',
+    highlight: 'Great Coffee, Good Trash Talk—it’s 100% true!',
+    text: 'Stepped in for a quick pour-over and ended up in a 20-minute conversation about Ethiopian naturals vs Washed lots. They had Proud Mary from Portland on guest bar and the brew was perfection. Unpretentious, fun, and dialed-in.',
     verified: true
   },
   {
@@ -445,7 +445,7 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     date: '2 months ago',
     highlight: 'Creative makerspace vibe with $1–10 pricing that respects your wallet.',
-    text: 'Love working here during weekday mornings. High ceilings, industrial maker aesthetic, delicious natural wines & oat lattes under $6. Their single-origin pour overs are treated with so much respect. 4.6 stars is well-earned.',
+    text: 'Love stopping here during weekday mornings. High ceilings, industrial maker aesthetic, delicious oat lattes with house-made lavender syrup under $6. Their single-origin pour overs are treated with so much respect. 4.6 stars is well-earned.',
     verified: true
   },
   {
@@ -466,8 +466,8 @@ export const TESTIMONIALS: Testimonial[] = [
     source: 'Google',
     rating: 5,
     date: 'Just recently',
-    highlight: 'Latte art masterclass was a fantastic date experience.',
-    text: 'My partner and I booked the Latte Art session. Maya is an exceptional instructor with infinite patience. We finally learned how to steam proper microfoam without huge bubbles. Delicious pastries and warm people.',
+    highlight: 'Last Call Baking pastries with a Proud Mary pour-over = bliss.',
+    text: 'The cardamom bun from Last Call Baking paired with their Junto Coffee guest roast was the culinary highlight of my week. Cozy, intimate space with real heart.',
     verified: true
   }
 ];

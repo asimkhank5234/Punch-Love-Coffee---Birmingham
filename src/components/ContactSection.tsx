@@ -156,7 +156,7 @@ export const ContactSection: React.FC = () => {
 
               <div className="p-3 bg-[#FAF7F2] rounded-xl border border-[#E8DFD8] text-[11px] text-neutral-600 flex items-center gap-2">
                 <Coffee className="w-4 h-4 text-[#E07A5F] shrink-0" />
-                <span>Barista workshops run Saturday mornings and Thursday evenings outside regular cafe hours.</span>
+                <span>Great Coffee, Good Trash Talk. Cozy space inside MAKEbhm Suite #103.</span>
               </div>
             </div>
 
@@ -170,7 +170,7 @@ export const ContactSection: React.FC = () => {
                 Send Us a Note
               </h3>
               <p className="text-xs sm:text-sm text-neutral-600 mt-1">
-                Have questions about our single-origin roasts, coffee subscriptions, or hosting a private team workshop? We respond within 24 hours.
+                Have questions about our single-origin roasts, coffee subscriptions, or stopping by MAKEbhm? We respond within 24 hours.
               </p>
             </div>
 
@@ -226,9 +226,9 @@ export const ContactSection: React.FC = () => {
                     className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-[#E2D8CF] bg-white focus:outline-hidden focus:border-[#9A3412]"
                   >
                     <option value="General Inquiry">General Question / Cafe Visit</option>
-                    <option value="Barista Workshop">Barista Workshop or Private Cohort</option>
+                    <option value="Coffee Beans">Coffee Bean Orders & Subscriptions</option>
                     <option value="Wholesale Beans">Wholesale Coffee Beans for Cafes/Offices</option>
-                    <option value="Event Catering">Event Catering inside MAKEbhm</option>
+                    <option value="Event Catering">Coffee Catering inside MAKEbhm</option>
                     <option value="Feedback">Feedback on Roasts or Service</option>
                   </select>
                 </div>
@@ -242,7 +242,7 @@ export const ContactSection: React.FC = () => {
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Tell us about what coffee you love, workshop questions, or how we can assist..."
+                    placeholder="Tell us what coffee you love or how we can assist..."
                     className="w-full text-xs p-3.5 rounded-xl border border-[#E2D8CF] focus:outline-hidden focus:border-[#9A3412]"
                   />
                 </div>

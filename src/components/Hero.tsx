@@ -1,13 +1,13 @@
 import React from 'react';
-import { ArrowRight, Star, Sparkles, MapPin, Award, ShieldCheck, HeartHandshake, Compass } from 'lucide-react';
+import { ArrowRight, Star, Sparkles, MapPin, Coffee, Heart, MessageCircle } from 'lucide-react';
 import { CAFE_INFO } from '../data/coffeeData';
 
 interface HeroProps {
   onExploreShop: () => void;
-  onBookWorkshop: () => void;
+  onExploreStory: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onExploreShop, onBookWorkshop }) => {
+export const Hero: React.FC<HeroProps> = ({ onExploreShop, onExploreStory }) => {
   return (
     <section className="relative overflow-hidden pt-6 pb-16 lg:py-20 bg-gradient-to-b from-[#FAF7F2] via-[#F4EFEA] to-[#FAF7F2]">
       {/* Decorative subtle background accents */}
@@ -17,7 +17,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreShop, onBookWorkshop }) => 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Editorial Headline & Value Propositions */}
+          {/* Left Column: Editorial Headline & Authentic Persona */}
           <div className="lg:col-span-7 space-y-6">
             
             {/* Social Proof & Location Pill */}
@@ -26,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreShop, onBookWorkshop }) => 
                 <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
                 <span>4.6</span>
               </span>
-              <span className="text-neutral-600 font-semibold">207+ Google Reviews</span>
+              <span className="text-neutral-600 font-semibold">{CAFE_INFO.reviewCount}+ Google Reviews</span>
               <span className="text-neutral-300">•</span>
               <span className="text-[#9A3412] font-semibold">{CAFE_INFO.priceRange} Cafe</span>
               <span className="text-neutral-300">•</span>
@@ -36,18 +36,25 @@ export const Hero: React.FC<HeroProps> = ({ onExploreShop, onBookWorkshop }) => 
               </span>
             </div>
 
+            {/* Slogan Pill */}
+            <div className="flex items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#E07A5F] uppercase tracking-wider bg-[#2C241D] text-white px-3 py-1 rounded-full">
+                <MessageCircle className="w-3 h-3 text-[#E07A5F]" />
+                <span>Great Coffee, Good Trash Talk</span>
+              </span>
+            </div>
+
             {/* Main Headline */}
             <h1 className="font-display text-4xl sm:text-5xl xl:text-6xl text-[#2C241D] font-bold leading-[1.15] tracking-tight">
-              Organic, Ethically Sourced{' '}
+              Specialty Roasts & Engaging Conversation in{' '}
               <span className="italic font-normal text-[#9A3412] underline decoration-[#E07A5F]/40 underline-offset-8">
-                Specialty Roasts
+                Birmingham, AL
               </span>
             </h1>
 
             {/* Supporting Copy */}
             <p className="text-lg sm:text-xl text-[#5A4E46] leading-relaxed max-w-2xl font-normal">
-              Roasted with intention in small 12kg batches inside <strong>MAKEbhm</strong>, Birmingham, AL. 
-              We partner directly with organic smallholder growers to bring vibrant single origins, velvety signature blends, and weekly barista workshops to coffee lovers everywhere.
+              Located inside <strong>MAKEbhm</strong>. We're proud to serve an eclectic multi-roaster selection including <strong>Proud Mary</strong>, <strong>Thankfully Coffee</strong>, and <strong>Junto Coffee</strong>, paired with house-made syrups and fresh pastries from <strong>Last Call Baking</strong>.
             </p>
 
             {/* Call To Actions */}
@@ -61,11 +68,11 @@ export const Hero: React.FC<HeroProps> = ({ onExploreShop, onBookWorkshop }) => 
               </button>
 
               <button
-                onClick={onBookWorkshop}
+                onClick={onExploreStory}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-neutral-50 border-2 border-[#E07A5F] text-[#9A3412] font-semibold text-base transition-all duration-200 shadow-xs cursor-pointer group"
               >
                 <Sparkles className="w-4 h-4 text-[#E07A5F]" />
-                <span>Book Barista Workshop</span>
+                <span>Inside Our World</span>
               </button>
             </div>
 
@@ -73,32 +80,32 @@ export const Hero: React.FC<HeroProps> = ({ onExploreShop, onBookWorkshop }) => 
             <div className="grid grid-cols-3 gap-4 pt-6 border-t border-[#E8DFD8]">
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#9A3412]">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                  <span>100% Organic</span>
+                  <Coffee className="w-4 h-4 text-[#E07A5F]" />
+                  <span>Multi-Roaster</span>
                 </div>
-                <p className="text-xs text-neutral-600">Zero pesticides or chemical synthetic inputs.</p>
+                <p className="text-xs text-neutral-600">Proud Mary, Thankfully & Junto</p>
               </div>
 
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#9A3412]">
-                  <HeartHandshake className="w-4 h-4 text-[#E07A5F]" />
-                  <span>Direct Trade</span>
+                  <Sparkles className="w-4 h-4 text-amber-600" />
+                  <span>House Syrups</span>
                 </div>
-                <p className="text-xs text-neutral-600">Paying 250%+ above commodity market rates.</p>
+                <p className="text-xs text-neutral-600">Subtle craft sweetness made in-house.</p>
               </div>
 
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#9A3412]">
-                  <Award className="w-4 h-4 text-amber-600" />
-                  <span>Weekly Labs</span>
+                  <Heart className="w-4 h-4 text-[#E07A5F]" />
+                  <span>Last Call Pastries</span>
                 </div>
-                <p className="text-xs text-neutral-600">Hands-on barista classes in Birmingham.</p>
+                <p className="text-xs text-neutral-600">Locally baked in Birmingham.</p>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Visual Coffee & Makerspace Collage */}
+          {/* Right Column: Visual Collage */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
@@ -106,7 +113,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreShop, onBookWorkshop }) => 
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] bg-[#3D332A]">
                 <img
                   src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=80"
-                  alt="Punch Love Coffee barista pouring manual V60 drip coffee inside MAKEbhm Birmingham"
+                  alt="Punch Love Coffee manual pour-over and friendly banter inside MAKEbhm Birmingham"
                   className="w-full h-full object-cover object-center filter brightness-95 contrast-105 hover:scale-105 transition-transform duration-700"
                 />
                 
@@ -116,32 +123,32 @@ export const Hero: React.FC<HeroProps> = ({ onExploreShop, onBookWorkshop }) => 
                 {/* Bottom Overlay Card */}
                 <div className="absolute bottom-0 inset-x-0 p-6 text-white">
                   <div className="flex items-center justify-between text-xs font-semibold text-[#E07A5F] mb-1">
-                    <span className="uppercase tracking-widest">Fresh Roast Spotlight</span>
-                    <span className="bg-[#FAF7F2]/20 backdrop-blur-xs px-2 py-0.5 rounded text-white text-[11px]">New Crop</span>
+                    <span className="uppercase tracking-widest">Great Coffee, Good Trash Talk</span>
+                    <span className="bg-[#FAF7F2]/20 backdrop-blur-xs px-2 py-0.5 rounded text-white text-[11px]">Cozy & Intimate</span>
                   </div>
-                  <h3 className="font-display text-2xl font-bold text-white">Alabama Sunburst</h3>
-                  <p className="text-xs text-neutral-200 mt-1">Ethiopia Guji Organic · Wild Blueberry, Jasmine, Honeycomb</p>
+                  <h3 className="font-display text-2xl font-bold text-white">Punch Love Coffee</h3>
+                  <p className="text-xs text-neutral-200 mt-1">Multi-Roaster Specialty Offerings · MAKEbhm Suite #103</p>
                   
                   <div className="flex items-center justify-between mt-3 pt-3 border-t border-white/20">
-                    <span className="font-display font-semibold text-lg text-white">$19.50</span>
+                    <span className="font-display font-semibold text-lg text-white">$1–10 Menu</span>
                     <span className="text-xs bg-white text-[#2C241D] font-bold px-3 py-1.5 rounded-lg shadow-sm">
-                      Roasted Weekly in Avondale
+                      Avondale, Birmingham
                     </span>
                   </div>
                 </div>
               </div>
 
-              {/* Floating Badge 1: MAKEbhm Address Callout */}
+              {/* Floating Badge 1: Slogan Badge */}
               <div className="absolute -top-4 -left-4 sm:-left-6 bg-white rounded-2xl p-3.5 shadow-xl border border-[#E8DFD8] flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-[#FAF7F2] border border-[#E2D8CF] flex items-center justify-center text-[#9A3412]">
-                  <Compass className="w-5 h-5 text-[#E07A5F]" />
+                  <MessageCircle className="w-5 h-5 text-[#E07A5F]" />
                 </div>
                 <div>
                   <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-500">
-                    Crafted in Birmingham
+                    The Punch Love Motto
                   </div>
                   <div className="text-xs font-bold text-[#2C241D]">
-                    4000 3rd Ave S #103
+                    Great Coffee, Good Trash Talk
                   </div>
                 </div>
               </div>
@@ -155,10 +162,10 @@ export const Hero: React.FC<HeroProps> = ({ onExploreShop, onBookWorkshop }) => 
                   <span className="text-xs font-extrabold text-[#2C241D] ml-1">4.6</span>
                 </div>
                 <p className="text-[11px] text-neutral-600 leading-snug">
-                  "Best specialty coffee & barista classes in Alabama."
+                  "Exceptional multi-roaster coffee and the friendliest conversation in town."
                 </p>
                 <div className="text-[10px] text-neutral-400 mt-1 font-medium">
-                  207 Verified Reviews
+                  {CAFE_INFO.reviewCount} Verified Reviews
                 </div>
               </div>
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CAFE_MENU, CAFE_INFO } from '../data/coffeeData';
-import { Coffee, Sparkles, MapPin, Clock, Heart } from 'lucide-react';
+import { Coffee, Sparkles, MapPin, Clock, Heart, Award } from 'lucide-react';
 
 export const CafeMenuSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -19,8 +19,31 @@ export const CafeMenuSection: React.FC = () => {
             Crafted Behind the Bar at MAKEbhm
           </h2>
           <p className="mt-4 text-[#5A4E46] text-base sm:text-lg">
-            Whether you are sitting down with your laptop or grabbing an espresso before heading into the ceramic studio, every cup is pulled with dialed-in precision.
+            Featuring rotating roasts from <strong>Proud Mary</strong>, <strong>Thankfully Coffee</strong>, and <strong>Junto Coffee</strong>, paired with our house-made syrups and daily artisanal pastries from <strong>Last Call Baking</strong>.
           </p>
+        </div>
+
+        {/* Guest Roaster & Bakery Partners Banner */}
+        <div className="max-w-4xl mx-auto mb-10 p-4 rounded-2xl bg-[#F4EFEA] border border-[#E2D8CF] grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-white border border-[#E2D8CF] flex items-center justify-center text-[#9A3412] shrink-0">
+              <Award className="w-5 h-5 text-[#E07A5F]" />
+            </div>
+            <div>
+              <div className="font-bold text-[#2C241D]">Multi-Roaster Bar</div>
+              <div className="text-neutral-600">Proud Mary (OR) · Thankfully (AL) · Junto (SC)</div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-white border border-[#E2D8CF] flex items-center justify-center text-[#9A3412] shrink-0">
+              <Sparkles className="w-5 h-5 text-amber-600" />
+            </div>
+            <div>
+              <div className="font-bold text-[#2C241D]">Pastries by Last Call Baking</div>
+              <div className="text-neutral-600">Handcrafted daily in Birmingham, Alabama</div>
+            </div>
+          </div>
         </div>
 
         {/* Category Selector Tabs */}
@@ -80,7 +103,7 @@ export const CafeMenuSection: React.FC = () => {
         <div className="mt-12 max-w-4xl mx-auto bg-[#F4EFEA] rounded-2xl p-5 border border-[#E2D8CF] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#4A3E37]">
           <div className="flex items-center gap-2">
             <Heart className="w-4 h-4 text-[#E07A5F]" />
-            <span>Organic oat, almond, & whole milk available. Syrup made in-house.</span>
+            <span>House-made syrups that complement rather than overpower. Organic milk & oat options.</span>
           </div>
 
           <div className="flex items-center gap-4 text-neutral-600">

@@ -3,10 +3,9 @@ import { CoffeeProduct, CartItem, GrindOption, BagSize } from './types/coffee';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { StoreSection } from './components/StoreSection';
-import { WorkshopSection } from './components/WorkshopSection';
-import { BrewCalculator } from './components/BrewCalculator';
-import { CafeMenuSection } from './components/CafeMenuSection';
 import { AboutSection } from './components/AboutSection';
+import { CafeMenuSection } from './components/CafeMenuSection';
+import { BrewCalculator } from './components/BrewCalculator';
 import { BlogSection } from './components/BlogSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { ContactSection } from './components/ContactSection';
@@ -24,8 +23,6 @@ export default function App() {
   });
 
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
-  const [selectedWorkshopId, setSelectedWorkshopId] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState('home');
 
   // Sync cart to localStorage
@@ -40,7 +37,7 @@ export default function App() {
   // Scroll spy to update active section in navbar
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['shop', 'workshops', 'brew-lab', 'menu', 'about', 'blog', 'reviews', 'contact'];
+      const sections = ['shop', 'about', 'menu', 'brew-lab', 'blog', 'reviews', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -105,7 +102,7 @@ export default function App() {
       ];
     });
 
-    // Auto open cart drawer to provide clear confirmation
+    // Auto open cart drawer to provide immediate feedback
     setIsCartOpen(true);
   };
 
@@ -127,15 +124,11 @@ export default function App() {
     setCartItems([]);
   };
 
-  const handleOpenBooking = (workshopId?: string) => {
-    if (workshopId) {
-      setSelectedWorkshopId(workshopId);
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsBookingModalOpen(true);
-  };
-
-  const handleCloseBooking = () => {
-    setIsBookingModalOpen(false);
   };
 
   return (
@@ -144,7 +137,6 @@ export default function App() {
       <Navbar
         cartCount={totalCartCount}
         onOpenCart={() => setIsCartOpen(true)}
-        onOpenBooking={() => handleOpenBooking()}
         activeSection={activeSection}
       />
 
@@ -152,32 +144,21 @@ export default function App() {
       <main className="flex-1">
         {/* Hero Section */}
         <Hero
-          onExploreShop={() => {
-            const el = document.getElementById('shop');
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
-          }}
-          onBookWorkshop={() => handleOpenBooking()}
+          onExploreShop={() => scrollToSection('shop')}
+          onExploreStory={() => scrollToSection('about')}
         />
 
         {/* Online Store: Specialty Roasts */}
         <StoreSection onAddToCart={handleAddToCart} />
 
-        {/* Weekly Barista Workshops & Booking System */}
-        <WorkshopSection
-          initialSelectedWorkshopId={selectedWorkshopId}
-          isOpenBookingModal={isBookingModalOpen}
-          onCloseBookingModal={handleCloseBooking}
-          onOpenBookingModal={handleOpenBooking}
-        />
+        {/* About Us & "Inside Our World" - Great Coffee, Good Trash Talk */}
+        <AboutSection />
+
+        {/* In-Person Cafe Drinks Menu ($1-10) with Proud Mary, Thankfully & Last Call Baking */}
+        <CafeMenuSection />
 
         {/* Brew Lab: Ratio Calculator & Pour Timer */}
         <BrewCalculator />
-
-        {/* In-Person Cafe Drinks Menu ($1-10) */}
-        <CafeMenuSection />
-
-        {/* About Us & MAKEbhm Story */}
-        <AboutSection />
 
         {/* Coffee Journal & Extraction Guides */}
         <BlogSection />

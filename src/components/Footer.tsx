@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Coffee, Instagram, MapPin, Mail, Phone, Heart, Star, Send, Check } from 'lucide-react';
+import { Coffee, Instagram, MapPin, Star, Send, Check, MessageCircle } from 'lucide-react';
 import { CAFE_INFO } from '../data/coffeeData';
 
 export const Footer: React.FC = () => {
@@ -41,8 +41,13 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#F39C12] bg-[#2C241D] px-2.5 py-1 rounded-full border border-[#3D332A]">
+              <MessageCircle className="w-3.5 h-3.5 text-[#E07A5F]" />
+              <span>Great Coffee, Good Trash Talk</span>
+            </div>
+
             <p className="text-xs text-neutral-400 leading-relaxed max-w-sm">
-              Artisanal organic specialty roaster located inside MAKEbhm. Dedicated to direct-trade transparency, small 12kg batch roasting, and empowering coffee enthusiasts through weekly barista masterclasses.
+              Specialty coffee shop located inside MAKEbhm. Proud to serve an eclectic multi-roaster selection including Proud Mary, Thankfully Coffee, and Junto Coffee, paired with house-made syrups and Last Call Baking pastries.
             </p>
 
             <div className="flex items-center gap-2 pt-1">
@@ -61,13 +66,13 @@ export const Footer: React.FC = () => {
               Explore
             </h4>
             <ul className="space-y-2 text-xs text-neutral-400">
-              <li><a href="#shop" className="hover:text-white transition-colors">Specialty Coffee Store</a></li>
-              <li><a href="#workshops" className="hover:text-white transition-colors">Barista Workshops</a></li>
-              <li><a href="#brew-lab" className="hover:text-white transition-colors">Dial-In Brew Lab</a></li>
+              <li><a href="#shop" className="hover:text-white transition-colors">Specialty Coffee Beans</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors">Inside Our World (Story)</a></li>
               <li><a href="#menu" className="hover:text-white transition-colors">Birmingham Cafe Menu</a></li>
-              <li><a href="#about" className="hover:text-white transition-colors">Our MAKEbhm Story</a></li>
+              <li><a href="#brew-lab" className="hover:text-white transition-colors">Dial-In Brew Lab</a></li>
               <li><a href="#blog" className="hover:text-white transition-colors">Journal & Guides</a></li>
               <li><a href="#reviews" className="hover:text-white transition-colors">Customer Testimonials</a></li>
+              <li><a href="#contact" className="hover:text-white transition-colors">Visit MAKEbhm</a></li>
             </ul>
           </div>
 
@@ -110,7 +115,7 @@ export const Footer: React.FC = () => {
               Roaster Dispatch
             </h4>
             <p className="text-xs text-neutral-400 leading-relaxed">
-              Get notified when rare single-origin micro-lots drop and new barista workshop cohorts open.
+              Get notified when rare single-origin micro-lots drop and new guest roasters arrive on bar.
             </p>
 
             {subscribed ? (
@@ -149,11 +154,11 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
           <div>
-            © {new Date().getFullYear()} Punch Love Coffee LLC. All rights reserved. Made in MAKEbhm, Birmingham, Alabama.
+            © {new Date().getFullYear()} Punch Love Coffee LLC. All rights reserved. Located in MAKEbhm, Birmingham, Alabama.
           </div>
           <div className="flex items-center gap-6 text-[11px]">
-            <a href="#shop" className="hover:text-white">Organic Sourcing</a>
-            <a href="#workshops" className="hover:text-white">Barista Certification</a>
+            <a href="#about" className="hover:text-white">Inside Our World</a>
+            <a href="#shop" className="hover:text-white">Multi-Roaster Coffee</a>
             <a href={CAFE_INFO.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white">
               Google Maps
             </a>

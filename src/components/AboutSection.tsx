@@ -1,6 +1,6 @@
 import React from 'react';
 import { CAFE_INFO } from '../data/coffeeData';
-import { MapPin, Heart, Sparkles, ShieldCheck, Users, Flame, Award } from 'lucide-react';
+import { MapPin, Sparkles, MessageCircle, Heart, Coffee, ShieldCheck, Flame } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -9,115 +9,134 @@ export const AboutSection: React.FC = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Visual Collage of MAKEbhm & Roaster */}
+          {/* Left Column: Visual Collage of MAKEbhm & Cafe Atmosphere */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
-              {/* Primary Image: Roasting & Cafe counter */}
+              {/* Primary Image: Cafe counter & intimate cozy seating */}
               <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-[4/5] bg-[#3D332A]">
                 <img
                   src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1000&q=80"
-                  alt="Punch Love Coffee roastery and espresso bar inside MAKEbhm Birmingham Alabama"
+                  alt="Punch Love Coffee cozy cafe bar and engaging conversation inside MAKEbhm Birmingham Alabama"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <div className="text-xs font-bold text-[#E07A5F] uppercase tracking-wider">
-                    Our Creative Home
+                  <div className="text-xs font-bold text-[#E07A5F] uppercase tracking-wider flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>Great Coffee, Good Trash Talk</span>
                   </div>
-                  <h3 className="font-display text-xl font-bold">
-                    MAKEbhm Makerspace
+                  <h3 className="font-display text-2xl font-bold mt-1">
+                    Punch Love Coffee
                   </h3>
                   <p className="text-xs text-neutral-300 mt-1">
-                    4000 3rd Ave S #103, Avondale / Forest Park, Birmingham
+                    MAKEbhm #103 · 4000 3rd Ave S, Birmingham, AL
                   </p>
                 </div>
               </div>
 
-              {/* Floating Stat Card: Small Batches */}
-              <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-xl border border-[#E8DFD8] max-w-[190px]">
-                <div className="flex items-center gap-2 text-[#9A3412] font-bold text-xs uppercase">
-                  <Flame className="w-4 h-4 text-[#E07A5F]" />
-                  <span>Small Batches</span>
+              {/* Floating Badge 1: Multi-Roaster Showcase */}
+              <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-xl border border-[#E8DFD8] max-w-[210px]">
+                <div className="flex items-center gap-1.5 text-[#9A3412] font-bold text-xs uppercase tracking-wider">
+                  <Coffee className="w-4 h-4 text-[#E07A5F]" />
+                  <span>Curated Roasters</span>
                 </div>
-                <div className="font-display text-2xl font-black text-[#2C241D] mt-1">
-                  12 kg
-                </div>
-                <p className="text-[11px] text-neutral-500 mt-0.5 leading-tight">
-                  Maximum drum roast capacity for surgical temperature control.
+                <p className="text-xs font-bold text-[#2C241D] mt-1.5 leading-snug">
+                  Proud Mary · Thankfully · Junto
+                </p>
+                <p className="text-[10px] text-neutral-500 mt-0.5">
+                  Portland, Auburn & South Carolina
                 </p>
               </div>
 
-              {/* Floating Stat Card: Direct Trade Impact */}
-              <div className="absolute -bottom-6 -left-4 bg-[#2C241D] text-white rounded-2xl p-4 shadow-xl border border-[#3D332A] max-w-[200px]">
-                <div className="flex items-center gap-1.5 text-emerald-400 font-bold text-xs">
-                  <ShieldCheck className="w-4 h-4" />
-                  <span>Direct Trade</span>
+              {/* Floating Badge 2: Last Call Baking Partner */}
+              <div className="absolute -bottom-6 -left-4 bg-[#2C241D] text-white rounded-2xl p-4 shadow-xl border border-[#3D332A] max-w-[220px]">
+                <div className="flex items-center gap-1.5 text-amber-400 font-bold text-xs">
+                  <Sparkles className="w-4 h-4" />
+                  <span>Fresh Local Pastries</span>
                 </div>
-                <div className="font-display text-2xl font-black text-white mt-1">
-                  +250%
+                <div className="font-display text-sm font-bold text-white mt-1">
+                  Last Call Baking Co.
                 </div>
                 <p className="text-[10px] text-neutral-300 mt-0.5 leading-tight">
-                  Paid directly to smallholder farming cooperatives vs commodity rates.
+                  Artisanal morning pastries baked fresh right here in Birmingham.
                 </p>
               </div>
 
             </div>
           </div>
 
-          {/* Right Column: Narrative Story */}
+          {/* Right Column: Narrative Story - "Inside Our World" */}
           <div className="lg:col-span-7 space-y-6">
             
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#E07A5F]/20 text-[#9A3412]">
-              <Heart className="w-3.5 h-3.5 fill-[#E07A5F] text-[#E07A5F]" />
-              <span>The Punch Love Ethos</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#E07A5F]/20 text-[#9A3412]">
+              <MessageCircle className="w-3.5 h-3.5 text-[#E07A5F]" />
+              <span className="font-semibold tracking-wide">Great Coffee, Good Trash Talk</span>
             </div>
 
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2C241D] tracking-tight leading-tight">
-              Coffee that Packs a Punch, Roasted with Deep Love.
+              Inside Our World
             </h2>
 
-            <div className="space-y-4 text-[#5A4E46] text-base leading-relaxed">
+            {/* Exact User Story Content */}
+            <div className="space-y-4 text-[#4A3E37] text-base leading-relaxed">
               <p>
-                Punch Love Coffee was founded in Birmingham, Alabama, with a simple yet relentless philosophy: 
-                <strong> specialty coffee should be extraordinary, transparently sourced, and accessible to everyone without pretension.</strong>
+                Welcome to <strong>Punch Love</strong>, where great coffee and engaging conversation are always on the menu. We're not your typical coffee shop, and we have no intention of blending into the crowd. What sets us apart is our pride in serving an eclectic range of coffees from multiple roasters, catering to coffee enthusiasts. Our selection includes <strong>Proud Mary</strong> from Portland, <strong>Thankfully Coffee</strong> from Auburn, and <strong>Junto Coffee</strong> from South Carolina.
               </p>
 
               <p>
-                When searching for our roasting headquarters, nowhere spoke to us like <strong>MAKEbhm</strong>. 
-                Surrounded by metal fabricators, ceramic artists, printmakers, and industrial creators, we treat coffee roasting as an artisanal trade—balancing science, thermodynamics, and sensory intuition.
+                For those who enjoy a touch of sweetness, we offer house-made syrups that complement rather than overpower our brews. Our delicious pastries from <strong>Last Call Baking</strong> pair perfectly with our coffee, adding a delightful touch to your visit.
               </p>
 
               <p>
-                The pottery mugs on our shelves are thrown in the ceramic wing down the hall. 
-                The timber espresso counter was hand-planed by Birmingham carpenters. We are proud to be an integral thread in Birmingham’s thriving makerspace culture.
+                We cherish our cozy space, perfect for intimate gatherings or a quiet coffee break. While we're enthusiastic about future growth, our current setup isn't ideal for large groups. Come by, enjoy a great cup, and join the conversation. We promise you'll leave with a smile and a deeper appreciation for exceptional coffee.
               </p>
             </div>
 
-            {/* Core Values Pillars */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-[#E8DFD8]">
-              <div className="p-4 rounded-2xl bg-[#F4EFEA] border border-[#E2D8CF] space-y-1">
-                <div className="font-display font-bold text-base text-[#2C241D] flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                  <span>100% Organic & Clean</span>
+            {/* Curated Highlights Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-[#E8DFD8]">
+              <div className="p-3.5 rounded-2xl bg-[#F4EFEA] border border-[#E2D8CF]">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#9A3412] flex items-center gap-1.5 mb-1">
+                  <Coffee className="w-3.5 h-3.5 text-[#E07A5F]" />
+                  <span>Multi-Roaster</span>
                 </div>
-                <p className="text-xs text-neutral-600 leading-relaxed">
-                  Only certified organic crops and Mountain Water decaffeination. No glyphosate, no chemical sprays, no synthetic solvents.
+                <div className="text-xs text-[#2C241D] font-bold">
+                  Guest Roaster Lineup
+                </div>
+                <p className="text-[11px] text-neutral-600 mt-0.5">
+                  Rotating beans from top roasters across the country.
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#F4EFEA] border border-[#E2D8CF] space-y-1">
-                <div className="font-display font-bold text-base text-[#2C241D] flex items-center gap-2">
-                  <Users className="w-4 h-4 text-[#E07A5F]" />
-                  <span>Education Over Gatekeeping</span>
+              <div className="p-3.5 rounded-2xl bg-[#F4EFEA] border border-[#E2D8CF]">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#9A3412] flex items-center gap-1.5 mb-1">
+                  <Sparkles className="w-3.5 h-3.5 text-[#E07A5F]" />
+                  <span>House-Made</span>
                 </div>
-                <p className="text-xs text-neutral-600 leading-relaxed">
-                  Our weekly barista classes exist because we love sharing our craft. Ask us anything about grind sizes, TDS, or dialing in.
+                <div className="text-xs text-[#2C241D] font-bold">
+                  Craft Syrups
+                </div>
+                <p className="text-[11px] text-neutral-600 mt-0.5">
+                  Subtle, balanced sweetness that lets the espresso shine.
+                </p>
+              </div>
+
+              <div className="p-3.5 rounded-2xl bg-[#F4EFEA] border border-[#E2D8CF]">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#9A3412] flex items-center gap-1.5 mb-1">
+                  <Heart className="w-3.5 h-3.5 text-[#E07A5F]" />
+                  <span>Local Love</span>
+                </div>
+                <div className="text-xs text-[#2C241D] font-bold">
+                  Last Call Baking
+                </div>
+                <p className="text-[11px] text-neutral-600 mt-0.5">
+                  Birmingham's best pastries paired with world-class brews.
                 </p>
               </div>
             </div>
 
-            <div className="pt-2 flex items-center gap-4 text-xs font-semibold text-[#2C241D]">
+            {/* Location & Instagram link */}
+            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-semibold text-[#2C241D]">
               <div className="flex items-center gap-1.5">
                 <MapPin className="w-4 h-4 text-[#E07A5F]" />
                 <span>{CAFE_INFO.address}</span>

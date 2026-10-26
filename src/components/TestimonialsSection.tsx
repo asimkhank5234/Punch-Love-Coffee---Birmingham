@@ -94,7 +94,6 @@ export const TestimonialsSection: React.FC = () => {
           {[
             { id: 'all', label: 'All Reviews' },
             { id: 'google', label: 'Google Cafe Reviews' },
-            { id: 'workshop', label: 'Barista Workshop Graduates' },
             { id: 'subscription', label: 'Roast Subscribers' }
           ].map((tab) => (
             <button

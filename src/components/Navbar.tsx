@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Calendar, Menu, X, Coffee, MapPin, Clock, ArrowRight, Sparkles } from 'lucide-react';
+import { ShoppingBag, Menu, X, Coffee, MapPin, Sparkles, MessageCircle } from 'lucide-react';
 import { CAFE_INFO } from '../data/coffeeData';
 
 interface NavbarProps {
   cartCount: number;
   onOpenCart: () => void;
-  onOpenBooking: () => void;
   activeSection: string;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   cartCount,
   onOpenCart,
-  onOpenBooking,
   activeSection
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,10 +54,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { name: 'Shop Roasts', href: '#shop' },
-    { name: 'Barista Workshops', href: '#workshops' },
-    { name: 'Brew Lab', href: '#brew-lab' },
-    { name: 'Cafe Menu', href: '#menu' },
     { name: 'Our Story', href: '#about' },
+    { name: 'Cafe Menu', href: '#menu' },
+    { name: 'Brew Lab', href: '#brew-lab' },
     { name: 'Journal', href: '#blog' },
     { name: 'Reviews', href: '#reviews' },
     { name: 'Visit Us', href: '#contact' },
@@ -71,12 +68,12 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="bg-[#2C241D] text-[#EFEBE4] text-xs py-2 px-4 border-b border-[#3D332A] relative z-50">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#3D332A] text-[#F39C12]">
-              <Sparkles className="w-3 h-3" />
-              <span>Organic & Direct-Trade Roasts</span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#3D332A] text-[#F39C12]">
+              <MessageCircle className="w-3 h-3 text-[#E07A5F]" />
+              <span>Great Coffee, Good Trash Talk</span>
             </span>
             <span className="hidden md:inline text-neutral-400">|</span>
-            <span className="hidden md:inline">Located inside <strong>MAKEbhm</strong> · 4000 3rd Ave S, Birmingham, AL</span>
+            <span className="hidden md:inline">MAKEbhm #103 · Proud Mary, Thankfully, Junto & Last Call Baking</span>
           </div>
 
           <div className="flex items-center gap-4 text-xs font-medium">
@@ -123,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </span>
               </div>
               <p className="text-[10px] tracking-widest font-semibold uppercase text-neutral-500">
-                Roasters · Birmingham, AL
+                Birmingham, AL · MAKEbhm
               </p>
             </div>
           </a>
@@ -150,14 +147,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Right Action Icons & Buttons */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Book Workshop Quick CTA */}
-            <button
-              onClick={onOpenBooking}
-              className="hidden sm:inline-flex items-center gap-1.5 bg-[#E07A5F] hover:bg-[#C9664C] text-white px-3.5 py-2 rounded-lg text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+            <a
+              href="#about"
+              className="hidden sm:inline-flex items-center gap-1.5 bg-[#FAF7F2] hover:bg-neutral-100 border border-[#E2D8CF] text-[#2C241D] px-3.5 py-2 rounded-lg text-xs font-semibold transition-colors"
             >
-              <Calendar className="w-3.5 h-3.5" />
-              <span>Book Workshop</span>
-            </button>
+              <Sparkles className="w-3.5 h-3.5 text-[#E07A5F]" />
+              <span>Inside Our World</span>
+            </a>
 
             {/* Cart Trigger */}
             <button
@@ -201,22 +197,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
 
             <div className="pt-3 border-t border-[#E8DFD8] flex flex-col gap-2">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenBooking();
-                }}
-                className="w-full flex items-center justify-center gap-2 bg-[#E07A5F] text-white py-2.5 rounded-xl text-sm font-semibold shadow-xs"
+              <a
+                href="#about"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full flex items-center justify-center gap-2 bg-[#2C241D] text-white py-2.5 rounded-xl text-sm font-semibold shadow-xs"
               >
-                <Calendar className="w-4 h-4" />
-                <span>Book a Barista Workshop</span>
-              </button>
+                <Sparkles className="w-4 h-4 text-[#E07A5F]" />
+                <span>Inside Our World</span>
+              </a>
 
               <div className="flex items-center justify-between text-xs text-neutral-500 pt-2 px-1">
-                <span className="flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5" />
-                  Mon-Fri 7am-4pm · Sat 8am-4pm
-                </span>
+                <span>Great Coffee, Good Trash Talk</span>
                 <span className="font-semibold text-[#2C241D]">MAKEbhm #103</span>
               </div>
             </div>
